@@ -9,38 +9,39 @@
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      opacity: 0.1;
       background-image: url("photo-1504971737233-9a29c29c17cb.jpeg"); 
-      opacity: 1;   
-      background-size: 150%;
+      background-size: cover;          /* passt sich Bildschirmgröße an */
+      background-position: center;     /* Bild immer mittig */
       background-repeat: no-repeat;
+      background-attachment: fixed;    /* fixiertes Hintergrundbild */
       color: white;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: center;
-      height: 100vh;
+      min-height: 100vh;               /* immer volle Höhe */
       text-align: center;
+      overflow: hidden;                /* kein Scrollen erzwingen */
     }
 
     h1 {
-      font-size: 2rem;
+      font-size: clamp(1.8rem, 4vw, 2.5rem); /* skaliert mit Bildschirm */
       margin-bottom: 0.5rem;
     }
 
     p {
-      font-size: 1rem;
+      font-size: clamp(1rem, 2.5vw, 1.3rem);
       margin-bottom: 2rem;
-      margin-bottom: 40%;
+      max-width: 80%;
     }
 
     .call-btn {
       background: #f9d342;
       color: #222;
-      font-size: 1.3rem;
+      font-size: clamp(1.1rem, 3vw, 1.4rem);
       font-weight: bold;
       text-decoration: none;
-      padding: 1rem 2rem;
+      padding: 0.8rem 2rem;
       border-radius: 50px;
       box-shadow: 0 6px 20px rgba(0,0,0,0.4);
       transition: 0.3s ease;
@@ -52,16 +53,16 @@
     }
 
     .taxi-icon {
-      font-size: 4rem;
+      font-size: clamp(3rem, 8vw, 5rem);
       margin-bottom: 1rem;
-      padding-bottom: 10%;
     }
 
     footer {
       position: absolute;
       bottom: 15px;
-      font-size: 0.9rem;
-      opacity: 0.7;
+      font-size: clamp(0.8rem, 2vw, 1rem);
+      opacity: 0.8;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
     }
   </style>
 </head>
@@ -78,3 +79,4 @@
   </footer>
 </body>
 </html>
+
